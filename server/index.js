@@ -45,7 +45,7 @@ const limiter = rateLimit({
 // Auth rate limiting (daha sıkı)
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 dakika
-  max: 5, // IP başına maksimum 5 auth isteği
+  max: 20, // IP başına maksimum 20 auth isteği
   message: {
     error: 'Çok fazla giriş denemesi. Lütfen 15 dakika sonra tekrar deneyin.'
   },
