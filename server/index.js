@@ -27,6 +27,9 @@ if (!process.env.JWT_SECRET) {
 
 const app = express();
 
+// Trust proxy ayarı (production'da gerekli)
+app.set('trust proxy', 1);
+
 // Rate limiting
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 dakika
@@ -36,6 +39,7 @@ const limiter = rateLimit({
   },
   standardHeaders: true,
   legacyHeaders: false,
+  trustProxy: true,
 });
 
 // Auth rate limiting (daha sıkı)
@@ -47,12 +51,13 @@ const authLimiter = rateLimit({
   },
   standardHeaders: true,
   legacyHeaders: false,
+  trustProxy: true,
 });
 
 // Middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://vercel.com/ahmets-projects-c2a9b3d7/gelir-gider-takip-uygulamasi/AqhFrwg4ep8kGR5trsZ1rAcPvD6W'] 
+    ? ['https://your-frontend-domain.vercel.app'] 
     : ['http://localhost:3000'],
   credentials: true
 }));
