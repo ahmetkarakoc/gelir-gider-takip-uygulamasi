@@ -1,14 +1,29 @@
 {
   "name": "gelir-gider-takip-uygulamasi",
   "version": "1.0.0",
-  "description": "Kişisel gelir-gider takip uygulaması",
+  "description": "Gelir-Gider Takip Uygulaması - Full Stack",
+  "main": "server/index.js",
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd server && npm run dev",
-    "client": "cd client && npm start",
-    "install-all": "npm install && cd server && npm install && cd ../client && npm install"
+    "start": "cd server && npm start",
+    "build": "cd server && npm install",
+    "dev": "cd server && npm run dev",
+    "install-server": "cd server && npm install",
+    "install-client": "cd client && npm install",
+    "build-client": "cd client && npm run build"
   },
-  "devDependencies": {
-    "concurrently": "^8.2.2"
+  "keywords": [
+    "gelir",
+    "gider",
+    "takip",
+    "finans",
+    "react",
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
   }
 } 
