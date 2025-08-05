@@ -57,7 +57,7 @@ const authLimiter = rateLimit({
 // Middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-frontend-domain.vercel.app'] 
+    ? ['https://gelir-gider-takip-uygulamasi-k4z3uoj3o-ahmets-projects-c2a9b3d7.vercel.app']
     : ['http://localhost:3000'],
   credentials: true
 }));
